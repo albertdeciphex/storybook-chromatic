@@ -18,13 +18,13 @@ jobs:
         with:
           node-version: 22.12.0
 
-      - name: Enable Corepack and Install pnpm
+      - name: Enable Corepack and Install Yarn
         run: |
           corepack enable
-          corepack prepare pnpm@8.10.5 --activate
+          corepack prepare yarn@4.5.0 --activate
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Run Chromatic
         uses: chromaui/action@latest
