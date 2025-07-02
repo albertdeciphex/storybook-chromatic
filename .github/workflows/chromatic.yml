@@ -6,6 +6,7 @@ jobs:
   chromatic:
     name: Run Chromatic CI
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -17,12 +18,12 @@ jobs:
         with:
           node-version: 22.12.0
 
-      - name: Enable Corepack & Install pnpm
+      - name: Enable Corepack and Install pnpm
         run: |
           corepack enable
-          corepack prepare pnpm@latest --activate
+          corepack prepare pnpm@8.10.5 --activate
 
-      - name: Install dependencies with pnpm
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Run Chromatic
