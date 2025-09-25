@@ -12,7 +12,6 @@
     "url": "https://github.com/chromaui/intro-storybook-react-template/issues"
   },
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -23,7 +22,12 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "init-msw": "msw init public/"
+    "init-msw": "msw init public/",
+    "prepublishOnly": "npm run build && npm run build-storybook",
+    "publish:npm": "npm publish",
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish",
+    "publish:major": "npm version major && npm publish"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
